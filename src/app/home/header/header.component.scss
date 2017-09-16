@@ -1,0 +1,22 @@
+.sidenav {
+    height: 100%;
+
+    &.content {
+        z-index: 21560;
+        float: left;
+        padding: 20px;
+    }
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    font-family: 'Laughing-Smiling';
+    text-align: center;
+    font-size: 50px;
+}
