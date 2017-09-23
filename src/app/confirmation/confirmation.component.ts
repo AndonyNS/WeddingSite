@@ -11,9 +11,11 @@ export class ConfirmationComponent implements OnInit {
     id: string;
     name: string;
     notFound: boolean;
+    loading: boolean;
     constructor(private route: ActivatedRoute, private db: AngularFireDatabase) {}
 
     ngOnInit() {
+        this.loading = true;
         this.route.params.subscribe(params => {
             this.id = params['id'];
             this.getNames();
@@ -29,6 +31,7 @@ export class ConfirmationComponent implements OnInit {
             } else {
                 this.notFound = true;
             }
+            this.loading = false;
         });
     }
 

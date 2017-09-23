@@ -1,15 +1,19 @@
-<p>
-  <strong>
-  {{name}}
-</strong>
-</p>
-<p>
-  Gracias por confirmar la asistencia a nuestra boda. Presione el botón de confirmar para aceptar su invitación.
-</p>
+<div class="confirm" *ngIf="!loading">
+    <p>
+        <strong>
+        {{name}}
+      </strong>
+      </p>
+      <p>
+        Gracias por confirmar la asistencia a nuestra boda. Presione el botón de confirmar para aceptar su invitación.
+      </p>
 
-<button (click)="confirm()">Confirmar</button>
+      <button (click)="confirm()">Confirmar</button>
+      <br/>
+
+      ¡Los esperamos!
 <br/>
+      Débora y Andony
+</div>
 
-Los esperamos!!
-
-Débora y Andony
+<div *ngIf="loading">Cargando...</div>
