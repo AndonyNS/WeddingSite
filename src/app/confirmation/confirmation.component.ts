@@ -9,7 +9,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class ConfirmationComponent implements OnInit {
     id: string;
-    items;
+    name: string;
+    notFound: boolean;
     constructor(private route: ActivatedRoute, private db: AngularFireDatabase) {}
 
     ngOnInit() {
@@ -20,9 +21,18 @@ export class ConfirmationComponent implements OnInit {
     }
 
     getNames() {
-        this.items = this.db.list('/invitations');
-        this.items.subscribe(result => {
-            console.log(result[0]);
+        const items = this.db.list('/invitations');
+        items.subscribe(result => {
+            const item = result.find(i => i.id === this.id);
+            if (item) {
+                this.name = item.name;
+            } else {
+                this.notFound = true;
+            }
         });
+    }
+
+    confirm() {
+        alert('Confirmando');
     }
 }

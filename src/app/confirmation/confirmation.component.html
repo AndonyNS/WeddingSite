@@ -1,9 +1,15 @@
 <p>
-  confirmation works with param {{id}}
+  <strong>
+  {{name}}
+</strong>
+</p>
+<p>
+  Gracias por confirmar la asistencia a nuestra boda. Presione el botón de confirmar para aceptar su invitación.
 </p>
 
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
-  </li>
-</ul>
+<button (click)="confirm()">Confirmar</button>
+<br/>
+
+Los esperamos!!
+
+Débora y Andony
