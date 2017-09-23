@@ -9,6 +9,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class ConfirmationComponent implements OnInit {
     id: string;
+    items;
     constructor(private route: ActivatedRoute, private db: AngularFireDatabase) {}
 
     ngOnInit() {
@@ -19,8 +20,9 @@ export class ConfirmationComponent implements OnInit {
     }
 
     getNames() {
-        debugger;
-        let item = this.db.object('/invitatons');
-        console.log(item);
+        this.items = this.db.list('/invitations');
+        this.items.subscribe(result => {
+            console.log(result[0]);
+        });
     }
 }
