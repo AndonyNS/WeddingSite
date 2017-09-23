@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './home/nav-bar/nav-bar.component';
 import { HeaderComponent } from './home/header/header.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, NavBarComponent, HeaderComponent],
+    declarations: [AppComponent, HomeComponent, NavBarComponent, HeaderComponent, ConfirmationComponent],
     imports: [BrowserAnimationsModule, AppRoutingModule, MyMaterialModule],
     providers: [],
     bootstrap: [AppComponent]
